@@ -1,0 +1,13 @@
+form {
+    margin-top:1em;
+}
+
+form div {
+    padding-top: 1em;
+}
+
+form label {
+    min-width: 5em;
+    display: inline-block;
+
+}

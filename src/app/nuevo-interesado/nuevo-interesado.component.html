@@ -1,0 +1,18 @@
+<form>
+    <div>
+        <label>Nombre: </label>
+        <input type="text" [(ngModel)]="nombre" name="nombre" />
+    </div>
+    <div>
+        <label>Edad: </label>
+        <input type="number" [(ngModel)]="edad" name="edad" />
+    </div>
+    <div>
+        <label>Trabajo: </label>
+        <input type="text" [(ngModel)]="trabajo" name="trabajo" />
+    </div>
+    <div>
+        <button (click)="agregar()">Agregar</button>
+        <button (click)="cancelar()">Cancelar</button>
+    </div>
+</form>

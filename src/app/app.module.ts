@@ -7,6 +7,9 @@ import { AppComponent } from './app.component';
 import { DescripcionComponent } from './descripcion/descripcion.component';
 import { ColorComponente } from './color/color.component';
 import { InteresadoComponent } from './interesado/interesado.component';
+import { NuevoInteresadoComponent } from './nuevo-interesado/nuevo-interesado.component';
+
+import { PersonaService } from './services/persona.service';
 
 //import { routing } from './app.routing';
 
@@ -15,7 +18,8 @@ import { InteresadoComponent } from './interesado/interesado.component';
     AppComponent,
     DescripcionComponent,
     ColorComponente,
-    InteresadoComponent
+    InteresadoComponent,
+    NuevoInteresadoComponent
   ],
   imports: [
     BrowserModule,
@@ -23,7 +27,7 @@ import { InteresadoComponent } from './interesado/interesado.component';
     FormsModule,
     //routing
   ],
-  providers: [],
+  providers: [PersonaService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

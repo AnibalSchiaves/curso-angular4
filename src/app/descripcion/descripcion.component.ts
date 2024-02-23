@@ -1,5 +1,6 @@
 import { Component } from "@angular/core";
-import { Persona, personas } from "../persona";
+import { Persona } from "../persona";
+import { PersonaService } from "../services/persona.service";
 
 @Component({
     selector:"app-descripcion",
@@ -11,10 +12,12 @@ export class DescripcionComponent {
 
     public personas:Array<Persona>;
 
-    constructor() {
+    constructor(
+        private _personaService: PersonaService
+    ) {
         this.gentileza = "Natalia Lohurcade";
         this.extra = "Esta es información adicional";
-        this.personas = personas;
+        this.personas = this._personaService.getPersonas();
     }
 
     ngOnInit() {
