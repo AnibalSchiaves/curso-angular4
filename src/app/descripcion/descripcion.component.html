@@ -1,0 +1,18 @@
+<p>Esta es una aplicación de ejemplo hecha para el curso de Angular 4.</p>
+<p>Este curso me lo pasó {{gentileza}}.</p>
+<h2>Las siguientes son las personas involucradas en el desarrollo:</h2>
+<ul>
+    <li *ngFor="let p of personas; let i = index;" style="padding:0.5em">
+        {{i+1}}) {{p.nombre}} 
+        <span [ngStyle]="{'background-color':p.color,'color':'white'}">
+            ({{p.sabeProgramar?'sabe programar':'no sabe programar'}})
+        </span>
+        &nbsp;
+        <!--<button (click)="mostrarDetalles(p)">+ Info</button>-->
+        <button [routerLink]="['/interesado',p.id]">+ Info</button>
+        <button (click)="cambiarSabeProgramar(p)">
+            <span *ngIf="p.sabeProgramar">Ya no programa</span>
+            <span *ngIf="!p.sabeProgramar">Empezó a programar</span>
+        </button>
+    </li>
+</ul>

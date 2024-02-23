@@ -1,0 +1,15 @@
+<h2>Selector de color</h2>
+<input type="text" [(ngModel)]="color" />
+<br>
+<br>
+<div [ngStyle]="{
+    'background-color':color,
+    'width': '100px',
+    'height':'100px',
+    }"
+    [style.border]="color == 'white' ? '1px solid black' : 'none' "
+    [ngClass]="{
+        'borde-gris':color == 'black',
+        '': color != 'black'
+    }">
+</div>

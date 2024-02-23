@@ -1,0 +1,26 @@
+<h2>Datos del Interesado</h2>
+<div *ngIf="persona">
+<p>
+    <label>Nombre: </label>
+    <span>{{persona.nombre}}</span>
+</p>
+<p>
+    <label>Edad: </label>
+    <span>{{persona.edad}}</span>
+</p>
+<p>
+    <label>Trabajo: </label>
+    <span>{{persona.trabajo}}</span>
+</p>
+<p>
+    <label>Sabe programar: </label>
+    <span>{{persona.sabeProgramar?'Si':'No'}}</span>
+</p>
+</div>
+<div *ngIf="!persona">
+    <p>El interesado no existe</p>
+    <a 
+        [ngStyle]="{'text-decoration':'underline','cursor':'pointer'}" 
+        (click)="irUltimo()">Ir al último
+    </a>
+</div>
