@@ -9,6 +9,7 @@ import { PersonaService } from "../services/persona.service";
 export class DescripcionComponent {
     public gentileza:string;
     public extra:string;
+    public date:Date;
 
     public personas:Array<Persona>;
 
@@ -18,6 +19,7 @@ export class DescripcionComponent {
         this.gentileza = "Natalia Lohurcade";
         this.extra = "Esta es información adicional";
         this.personas = this._personaService.getPersonas();
+        this.date = new Date();
     }
 
     ngOnInit() {

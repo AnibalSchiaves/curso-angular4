@@ -14,7 +14,7 @@
 </p>
 <p>
     <label>Sabe programar: </label>
-    <span>{{persona.sabeProgramar?'Si':'No'}}</span>
+    <span>{{persona.sabeProgramar | sino}}</span>
 </p>
 </div>
 <div *ngIf="!persona">
