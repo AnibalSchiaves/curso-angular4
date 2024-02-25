@@ -1,13 +1,24 @@
 form {
     margin-top:1em;
+    width: 300px;
 }
 
 form div {
     padding-top: 1em;
+    width: 100%;
 }
 
 form label {
     min-width: 5em;
     display: inline-block;
 
+}
+
+form input[type="text"], form input[type="number"], form span {
+    display: block;
+    width: 100%;
+}
+
+.error{
+    color: red;
 }

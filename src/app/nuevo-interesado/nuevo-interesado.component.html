@@ -1,18 +1,27 @@
-<form>
+<form #formInteresado="ngForm" (submit)="agregar();formInteresado.reset()">
     <div>
         <label>Nombre: </label>
-        <input type="text" [(ngModel)]="nombre" name="nombre" />
+        <input type="text" [(ngModel)]="persona.nombre" name="nombre" #nombre="ngModel" required />
+        <span *ngIf="nombre.touched && !nombre.valid" class="error">
+            El nombre es requerido o no es válido
+        </span>
     </div>
     <div>
         <label>Edad: </label>
-        <input type="number" [(ngModel)]="edad" name="edad" />
+        <input type="number" [(ngModel)]="persona.edad" name="edad" #edad="ngModel" required min="1"/>
+        <span *ngIf="edad.touched && !edad.valid" class="error">
+            La edad es requerida o no es válida
+        </span>
     </div>
     <div>
         <label>Trabajo: </label>
-        <input type="text" [(ngModel)]="trabajo" name="trabajo" />
+        <input type="text" [(ngModel)]="persona.trabajo" name="trabajo" #trabajo="ngModel" required/>
+        <span *ngIf="trabajo.touched && !trabajo.valid" class="error">
+            El trabajo es requerido o no es válido
+        </span>
     </div>
     <div>
-        <button (click)="agregar()">Agregar</button>
+        <input type="submit" value="Agregar" [disabled]="!formInteresado.form.valid">
         <button (click)="cancelar()">Cancelar</button>
     </div>
 </form>

@@ -1,6 +1,7 @@
 import { Component } from "@angular/core";
 import { Router } from "@angular/router";
 import { PersonaService } from "../services/persona.service";
+import { Persona } from "../persona";
 
 @Component({
     selector:"app-nuevo-interesado",
@@ -9,17 +10,19 @@ import { PersonaService } from "../services/persona.service";
 })
 export class NuevoInteresadoComponent {
 
-    public nombre:string;
+    /*public nombre:string;
     public edad:string;
-    public trabajo:string;
+    public trabajo:string;*/
+    public persona:Persona;
 
     constructor(
         private _router:Router,
         private _personaService: PersonaService
     ) {
-        this.nombre = "";
+        /*this.nombre = "";
         this.edad = "";
-        this.trabajo = "";
+        this.trabajo = "";*/
+        this.persona = new Persona(0,"",0,"",false);
     }
 
     cancelar() {
@@ -27,7 +30,12 @@ export class NuevoInteresadoComponent {
     }
 
     agregar() {
-        this._personaService.addPersona(this.nombre, Number(this.edad), this.trabajo);
-        this._router.navigate(['/descripcion']);
+        this._personaService.addPersona(this.persona.nombre, this.persona.edad, this.persona.trabajo);
+        if (confirm("EL interesado se ha guardado correctamente. ¿Añade otro?")) {
+            //no hago nada
+        } else {
+            this._router.navigate(['/descripcion']);
+        }
+        
     }
 }
