@@ -19,6 +19,7 @@ import { SiNoPipe } from './pipes/sino.pipe';
 
 import { PersonaService } from './services/persona.service';
 import { PostService } from './services/post.service';
+import { PlantillasComponent } from './plantillas/plantillas.component';
 
 //import { routing } from './app.routing';
 
@@ -30,7 +31,8 @@ import { PostService } from './services/post.service';
     InteresadoComponent,
     NuevoInteresadoComponent,
     SiNoPipe,
-    PostsComponent
+    PostsComponent,
+    PlantillasComponent
   ],
   imports: [
     BrowserModule,
