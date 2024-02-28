@@ -1,0 +1,12 @@
+<h2>Listado de Posts</h2>
+<table *ngIf="posts && posts.length>0">
+    <tr>
+        <th>Id</th>
+        <th>Title</th>
+    </tr>
+    <tr *ngFor="let post of posts">
+        <td>{{post.id}}</td>
+        <td>{{post.title}}</td>
+    </tr>
+</table>
+<p *ngIf="!posts || posts.length==0">Cargando...</p>

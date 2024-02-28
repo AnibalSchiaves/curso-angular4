@@ -4,6 +4,7 @@ import { DescripcionComponent } from './descripcion/descripcion.component';
 import { ColorComponente } from './color/color.component';
 import { InteresadoComponent } from './interesado/interesado.component';
 import { NuevoInteresadoComponent } from "./nuevo-interesado/nuevo-interesado.component";
+import { PostsComponent } from './posts/posts.component';
 
 //const routes: Routes = [];
 const routes: Routes = [
@@ -12,6 +13,7 @@ const routes: Routes = [
   {path:"descripcion", component: DescripcionComponent},
   {path:"interesado/:id", component: InteresadoComponent},
   {path:"nuevo", component: NuevoInteresadoComponent},
+  {path:"posts", component: PostsComponent},
   {path:"**", component: DescripcionComponent}
 ]
 

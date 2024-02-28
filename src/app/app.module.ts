@@ -1,6 +1,7 @@
 import { LOCALE_ID, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import localeEs from '@angular/common/locales/es';
 import { registerLocaleData } from '@angular/common';
@@ -12,10 +13,12 @@ import { DescripcionComponent } from './descripcion/descripcion.component';
 import { ColorComponente } from './color/color.component';
 import { InteresadoComponent } from './interesado/interesado.component';
 import { NuevoInteresadoComponent } from './nuevo-interesado/nuevo-interesado.component';
+import { PostsComponent } from './posts/posts.component';
 
 import { SiNoPipe } from './pipes/sino.pipe';
 
 import { PersonaService } from './services/persona.service';
+import { PostService } from './services/post.service';
 
 //import { routing } from './app.routing';
 
@@ -26,15 +29,17 @@ import { PersonaService } from './services/persona.service';
     ColorComponente,
     InteresadoComponent,
     NuevoInteresadoComponent,
-    SiNoPipe
+    SiNoPipe,
+    PostsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    HttpClientModule,
     //routing
   ],
-  providers: [PersonaService, {provide: LOCALE_ID, useValue: 'es'}],
+  providers: [PersonaService, {provide: LOCALE_ID, useValue: 'es'}, PostService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
